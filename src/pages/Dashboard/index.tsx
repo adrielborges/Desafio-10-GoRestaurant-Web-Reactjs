@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
     try {
       // TODO ADD A NEW FOOD PLATE TO THE API
 
-      const response = await api.post('/', {
+      const response = await api.post('/foods', {
         ...food,
         available: true,
       });
@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
   ): Promise<void> {
     // TODO UPDATE A FOOD PLATE ON THE API
     try {
-      const response = await api.put(`/foods${editingFood.id}`, {
+      const response = await api.put(`/foods/${editingFood.id}`, {
         ...editingFood,
         ...food,
       });
